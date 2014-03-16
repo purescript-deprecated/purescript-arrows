@@ -7,6 +7,10 @@ class Arrow a where
   arr :: forall b c. (b -> c) -> a b c
   first :: forall b c d. a b c -> a (Tuple b d) (Tuple c d)
 
+instance arrowFunction :: Arrow (->) where
+  arr f = f
+  first f (Tuple b d) = Tuple (f b) d
+
 second :: forall a b c d. (Category a, Arrow a) => a b c -> a (Tuple d b) (Tuple d c)
 second f = arr swap >>> first f >>> arr swap
 
