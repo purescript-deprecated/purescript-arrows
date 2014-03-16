@@ -1,0 +1,20 @@
+{
+  "name": "purescript-arrows",
+  "version": "0.0.0",
+  "homepage": "https://github.com/purescript/purescript-arrows",
+  "authors": [
+    "Phil Freeman <paf31@cantab.net>"
+  ],
+  "description": "Type classes for Arrows",
+  "keywords": [
+    "purescript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "externs",
+    "js"
+  ]
+}
