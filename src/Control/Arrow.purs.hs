@@ -1,7 +1,7 @@
 module Control.Arrow where
 
 import Prelude
-import Data.Tuple
+import Data.Tuple (Tuple(..))
 
 class Arrow a where
   arr :: forall b c. (b -> c) -> a b c
