@@ -7,10 +7,6 @@ module.exports = function(grunt) {
         clean: ["externs", "js"],
     
         "purescript-make": {
-            options: {
-                tco: true,
-                magicDo: true
-            },
             lib: {
                 src:
                     [ "src/**/*.purs.hs"
