@@ -1,6 +1,6 @@
 module Control.Arrow where
 
-import Data.Tuple (Tuple(..))
+import Data.Tuple (Tuple(..), swap)
 
 class Arrow a where
   arr :: forall b c. (b -> c) -> a b c
@@ -12,9 +12,6 @@ instance arrowFunction :: Arrow (->) where
 
 second :: forall a b c d. (Category a, Arrow a) => a b c -> a (Tuple d b) (Tuple d c)
 second f = arr swap >>> first f >>> arr swap
-
-swap :: forall a b. Tuple a b -> Tuple b a
-swap (Tuple x y) = Tuple y x
 
 infixr 3 ***
 infixr 3 &&&
