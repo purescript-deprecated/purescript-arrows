@@ -1,6 +1,5 @@
 module Control.Arrow where
 
-import Prelude
 import Data.Tuple (Tuple(..))
 
 class Arrow a where

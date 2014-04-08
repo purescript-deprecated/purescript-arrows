@@ -12,10 +12,13 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
     "externs",
-    "js"
+    "js",
+    "node_modules",
+    "tmp",
+    "Gruntfile.js",
+    "package.json"
   ],
   "dependencies": {
     "purescript-tuples": "*"
