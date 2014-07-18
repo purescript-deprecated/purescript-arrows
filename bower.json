@@ -1,7 +1,6 @@
 {
   "name": "purescript-arrows",
-  "version": "0.0.0",
-  "homepage": "https://github.com/purescript/purescript-arrows",
+  "homepage": "https://github.com/purescript-contrib/purescript-arrows",
   "authors": [
     "Phil Freeman <paf31@cantab.net>"
   ],
@@ -13,10 +12,11 @@
   "ignore": [
     "**/.*",
     "bower_components",
-    "externs",
-    "js",
     "node_modules",
+    "output",
+    "tests",
     "tmp",
+    "bower.json",
     "Gruntfile.js",
     "package.json"
   ],
