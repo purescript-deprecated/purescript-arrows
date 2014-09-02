@@ -3,7 +3,7 @@ module Control.Arrow.Kleisli where
 import Control.Arrow
 import Data.Tuple (Tuple(..), swap)
 
-data Kleisli m a b = Kleisli (a -> m b)
+newtype Kleisli m a b = Kleisli (a -> m b)
 
 runKleisli :: forall m a b. Kleisli m a b -> a -> m b
 runKleisli (Kleisli f) = f

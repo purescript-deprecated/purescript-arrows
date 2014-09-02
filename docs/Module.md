@@ -33,7 +33,7 @@
 
 ### Types
 
-    data Kleisli m a b where
+    newtype Kleisli m a b where
       Kleisli :: a -> m b -> Kleisli m a b
 
 
