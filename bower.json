@@ -2,7 +2,7 @@
   "name": "purescript-arrows",
   "homepage": "https://github.com/purescript-contrib/purescript-arrows",
   "authors": [
-    "Phil Freeman <paf31@cantab.net>"
+    "Phil Freeman <paf31@cantab.net>",
     "Gary Burgess <gary.burgess@gmail.com>"
   ],
   "description": "Type classes for Arrows",
