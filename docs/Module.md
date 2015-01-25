@@ -53,7 +53,7 @@
     instance categoryKleisli :: (Monad m) => Category (Kleisli m)
 
 
-    instance profuncorKleisli :: (Monad m) => Profunctor (Kleisli m)
+    instance profunctorKleisli :: (Functor f) => Profunctor (Kleisli f)
 
 
     instance semigroupoidKleisli :: (Monad m) => Semigroupoid (Kleisli m)

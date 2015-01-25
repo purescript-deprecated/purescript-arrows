@@ -16,7 +16,7 @@ instance semigroupoidKleisli :: (Monad m) => Semigroupoid (Kleisli m) where
 instance categoryKleisli :: (Monad m) => Category (Kleisli m) where
   id = Kleisli return
 
-instance profuncorKleisli :: (Monad m) => Profunctor (Kleisli m) where
+instance profunctorKleisli :: (Functor f) => Profunctor (Kleisli f) where
   dimap f g (Kleisli h) = Kleisli ((<$>) g <<< h <<< f)
 
 instance strongKleisli :: (Monad m) => Strong (Kleisli m) where
