@@ -2,7 +2,8 @@
   "name": "purescript-arrows",
   "homepage": "https://github.com/purescript-contrib/purescript-arrows",
   "authors": [
-    "Phil Freeman <paf31@cantab.net>"
+    "Phil Freeman <paf31@cantab.net>",
+    "Gary Burgess <gary.burgess@gmail.com>"
   ],
   "description": "Type classes for Arrows",
   "keywords": [
@@ -21,6 +22,7 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-tuples": "*"
+    "purescript-tuples": "~0.2.3",
+    "purescript-profunctor": "~0.0.2"
   }
 }
