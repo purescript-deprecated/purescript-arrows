@@ -34,55 +34,55 @@ class ArrowPlus a where
 
 
 
-## Module Control.Arrow.CoKleisli
+## Module Control.Arrow.Cokleisli
 
-#### `CoKleisli`
+#### `Cokleisli`
 
 ``` purescript
-newtype CoKleisli w a b
-  = CoKleisli (w a -> b)
+newtype Cokleisli w a b
+  = Cokleisli (w a -> b)
 ```
 
 
-#### `runCoKleisli`
+#### `runCokleisli`
 
 ``` purescript
-runCoKleisli :: forall w a b. CoKleisli w a b -> w a -> b
+runCokleisli :: forall w a b. Cokleisli w a b -> w a -> b
 ```
 
 
-#### `semigroupoidCoKleisli`
+#### `semigroupoidCokleisli`
 
 ``` purescript
-instance semigroupoidCoKleisli :: (Extend m) => Semigroupoid (CoKleisli m)
+instance semigroupoidCokleisli :: (Extend m) => Semigroupoid (Cokleisli m)
 ```
 
 
-#### `categoryCoKleisli`
+#### `categoryCokleisli`
 
 ``` purescript
-instance categoryCoKleisli :: (Comonad m) => Category (CoKleisli m)
+instance categoryCokleisli :: (Comonad m) => Category (Cokleisli m)
 ```
 
 
-#### `profunctorCoKleisli`
+#### `profunctorCokleisli`
 
 ``` purescript
-instance profunctorCoKleisli :: (Functor f) => Profunctor (CoKleisli f)
+instance profunctorCokleisli :: (Functor f) => Profunctor (Cokleisli f)
 ```
 
 
-#### `strongCoKleisli`
+#### `strongCokleisli`
 
 ``` purescript
-instance strongCoKleisli :: (Comonad m) => Strong (CoKleisli m)
+instance strongCokleisli :: (Comonad m) => Strong (Cokleisli m)
 ```
 
 
-#### `arrowCoKleisli`
+#### `arrowCokleisli`
 
 ``` purescript
-instance arrowCoKleisli :: (Comonad m) => Arrow (CoKleisli m)
+instance arrowCokleisli :: (Comonad m) => Arrow (Cokleisli m)
 ```
 
 
