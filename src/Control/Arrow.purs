@@ -9,15 +9,6 @@ class (Category a, Strong a) <= Arrow a where
 instance arrowFunction :: Arrow (->) where
   arr f = f
 
-infixr 3 ***
-infixr 3 &&&
-
-(***) :: forall a b b' c c'. (Arrow a) => a b c -> a b' c' -> a (Tuple b b') (Tuple c c')
-(***) f g = first f >>> second g
-
-(&&&) :: forall a b b' c c'. (Arrow a) => a b c -> a b c' -> a b (Tuple c c')
-(&&&) f g = arr (\b -> Tuple b b) >>> (f *** g)
-
 class ArrowZero a where
   azero :: forall b c. a b c
 

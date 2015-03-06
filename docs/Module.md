@@ -17,20 +17,6 @@ instance arrowFunction :: Arrow Prim.Function
 ```
 
 
-#### `(***)`
-
-``` purescript
-(***) :: forall a b b' c c'. (Arrow a) => a b c -> a b' c' -> a (Tuple b b') (Tuple c c')
-```
-
-
-#### `(&&&)`
-
-``` purescript
-(&&&) :: forall a b b' c c'. (Arrow a) => a b c -> a b c' -> a b (Tuple c c')
-```
-
-
 #### `ArrowZero`
 
 ``` purescript
