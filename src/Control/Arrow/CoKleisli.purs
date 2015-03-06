@@ -1,4 +1,4 @@
-module Control.Arrow.CoKleisli where
+module Control.Arrow.Cokleisli where
 
 import Data.Tuple
 import Data.Profunctor
@@ -8,23 +8,23 @@ import Control.Arrow
 import Control.Extend
 import Control.Comonad
 
-newtype CoKleisli w a b = CoKleisli (w a -> b)
+newtype Cokleisli w a b = Cokleisli (w a -> b)
 
-runCoKleisli :: forall w a b. CoKleisli w a b -> w a -> b
-runCoKleisli (CoKleisli f) = f
+runCokleisli :: forall w a b. Cokleisli w a b -> w a -> b
+runCokleisli (Cokleisli f) = f
 
-instance semigroupoidCoKleisli :: (Extend m) => Semigroupoid (CoKleisli m) where
-  (<<<) (CoKleisli f) (CoKleisli g) = CoKleisli (f =<= g)
+instance semigroupoidCokleisli :: (Extend m) => Semigroupoid (Cokleisli m) where
+  (<<<) (Cokleisli f) (Cokleisli g) = Cokleisli (f =<= g)
 
-instance categoryCoKleisli :: (Comonad m) => Category (CoKleisli m) where
-  id = CoKleisli extract
+instance categoryCokleisli :: (Comonad m) => Category (Cokleisli m) where
+  id = Cokleisli extract
 
-instance profunctorCoKleisli :: (Functor f) => Profunctor (CoKleisli f) where
-  dimap f g (CoKleisli h) = CoKleisli (g <<< h <<< (f <$>))
+instance profunctorCokleisli :: (Functor f) => Profunctor (Cokleisli f) where
+  dimap f g (Cokleisli h) = Cokleisli (g <<< h <<< (f <$>))
 
-instance strongCoKleisli :: (Comonad m) => Strong (CoKleisli m) where
-  first (CoKleisli f) = CoKleisli \w -> Tuple (f (fst <$> w)) (snd (extract w)) 
-  second (CoKleisli f) = CoKleisli \w -> Tuple (fst (extract w)) (f (snd <$> w))
+instance strongCokleisli :: (Comonad m) => Strong (Cokleisli m) where
+  first (Cokleisli f) = Cokleisli \w -> Tuple (f (fst <$> w)) (snd (extract w)) 
+  second (Cokleisli f) = Cokleisli \w -> Tuple (fst (extract w)) (f (snd <$> w))
 
-instance arrowCoKleisli :: (Comonad m) => Arrow (CoKleisli m) where
-  arr f = CoKleisli (f <<< extract)
+instance arrowCokleisli :: (Comonad m) => Arrow (Cokleisli m) where
+  arr f = Cokleisli (f <<< extract)
