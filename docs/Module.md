@@ -34,6 +34,59 @@ class ArrowPlus a where
 
 
 
+## Module Control.Arrow.CoKleisli
+
+#### `CoKleisli`
+
+``` purescript
+newtype CoKleisli w a b
+  = CoKleisli (w a -> b)
+```
+
+
+#### `runCoKleisli`
+
+``` purescript
+runCoKleisli :: forall w a b. CoKleisli w a b -> w a -> b
+```
+
+
+#### `semigroupoidCoKleisli`
+
+``` purescript
+instance semigroupoidCoKleisli :: (Extend m) => Semigroupoid (CoKleisli m)
+```
+
+
+#### `categoryCoKleisli`
+
+``` purescript
+instance categoryCoKleisli :: (Comonad m) => Category (CoKleisli m)
+```
+
+
+#### `profunctorCoKleisli`
+
+``` purescript
+instance profunctorCoKleisli :: (Functor f) => Profunctor (CoKleisli f)
+```
+
+
+#### `strongCoKleisli`
+
+``` purescript
+instance strongCoKleisli :: (Comonad m) => Strong (CoKleisli m)
+```
+
+
+#### `arrowCoKleisli`
+
+``` purescript
+instance arrowCoKleisli :: (Comonad m) => Arrow (CoKleisli m)
+```
+
+
+
 ## Module Control.Arrow.Kleisli
 
 #### `Kleisli`
