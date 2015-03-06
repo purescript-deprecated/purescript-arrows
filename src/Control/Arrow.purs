@@ -3,11 +3,9 @@ module Control.Arrow where
 import Data.Profunctor.Strong
 import Data.Tuple (Tuple(..), swap)
 
-class (Category a, Strong a) <= Arrow a where
-  arr :: forall b c. (b -> c) -> a b c
+class (Category a, Strong a) <= Arrow a
 
-instance arrowFunction :: Arrow (->) where
-  arr f = f
+instance arrowFunction :: Arrow (->)
 
 class ArrowZero a where
   azero :: forall b c. a b c
