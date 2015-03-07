@@ -6,7 +6,6 @@
 
 ``` purescript
 class (Category a, Strong a) <= Arrow a where
-  arr :: forall b c. (b -> c) -> a b c
 ```
 
 

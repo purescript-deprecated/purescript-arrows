@@ -26,5 +26,4 @@ instance strongCokleisli :: (Comonad m) => Strong (Cokleisli m) where
   first (Cokleisli f) = Cokleisli \w -> Tuple (f (fst <$> w)) (snd (extract w)) 
   second (Cokleisli f) = Cokleisli \w -> Tuple (fst (extract w)) (f (snd <$> w))
 
-instance arrowCokleisli :: (Comonad m) => Arrow (Cokleisli m) where
-  arr f = Cokleisli (f <<< extract)
+instance arrowCokleisli :: (Comonad m) => Arrow (Cokleisli m)
