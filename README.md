@@ -12,6 +12,7 @@ bower install purescript-arrows
 
 ## Module documentation
 
-- [Control.Arrow](docs/Control.Arrow.md)
-- [Control.Arrow.Kleisli](docs/Control.Arrow.Kleisli.md)
-- [Control.Arrow.Cokleisli](docs/Control.Arrow.Cokleisli.md)
+- [Control.Arrow](docs/Control/Arrow.md)
+- [Control.Arrow.Kleisli](docs/Control/Arrow/Kleisli.md)
+- [Control.Arrow.Cokleisli](docs/Control/Arrow/Cokleisli.md)
+- [Control.Arrow.Static](docs/Control/Arrow/Static.md)

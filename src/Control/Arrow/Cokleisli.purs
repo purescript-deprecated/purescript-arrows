@@ -1,4 +1,7 @@
+-- | The `Cokleisli` arrow for a `Comonad`.
 module Control.Arrow.Cokleisli where
+
+import Prelude
 
 import Data.Tuple
 import Data.Profunctor
@@ -8,13 +11,17 @@ import Control.Arrow
 import Control.Extend
 import Control.Comonad
 
+-- | `Cokleisli` gives an `Arrow` instance for the Co-Kleisli category of a `Comonad`.
+-- |
+-- | Composition is defined using `=>=` with `extract` as the identity morhism.
 newtype Cokleisli w a b = Cokleisli (w a -> b)
 
+-- | Unpack a `Cokleisli` arrow.
 runCokleisli :: forall w a b. Cokleisli w a b -> w a -> b
 runCokleisli (Cokleisli f) = f
 
 instance semigroupoidCokleisli :: (Extend m) => Semigroupoid (Cokleisli m) where
-  (<<<) (Cokleisli f) (Cokleisli g) = Cokleisli (f =<= g)
+  compose (Cokleisli f) (Cokleisli g) = Cokleisli (f =<= g)
 
 instance categoryCokleisli :: (Comonad m) => Category (Cokleisli m) where
   id = Cokleisli extract
