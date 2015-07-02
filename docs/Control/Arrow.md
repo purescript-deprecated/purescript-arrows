@@ -40,6 +40,8 @@ Arrows with a monoidal operation on morphisms
 (<+>) :: forall a b c. (ArrowPlus a) => a b c -> a b c -> a b c
 ```
 
+_right-associative / precedence 5_
+
 An infix alias for `aplus`. 
 
 
