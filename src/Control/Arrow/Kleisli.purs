@@ -22,7 +22,7 @@ newtype Kleisli m a b = Kleisli (a -> m b)
 runKleisli :: forall m a b. Kleisli m a b -> a -> m b
 runKleisli (Kleisli f) = f
 
-instance semigroupoidKleisli :: (Monad m) => Semigroupoid (Kleisli m) where
+instance semigroupoidKleisli :: (Bind m) => Semigroupoid (Kleisli m) where
   compose (Kleisli f) (Kleisli g) = Kleisli (\b -> g b >>= f)
 
 instance categoryKleisli :: (Monad m) => Category (Kleisli m) where

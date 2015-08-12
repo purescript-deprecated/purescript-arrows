@@ -15,7 +15,7 @@ Composition is defined using `>=>` with `return` as the identity morhism.
 
 ##### Instances
 ``` purescript
-instance semigroupoidKleisli :: (Monad m) => Semigroupoid (Kleisli m)
+instance semigroupoidKleisli :: (Bind m) => Semigroupoid (Kleisli m)
 instance categoryKleisli :: (Monad m) => Category (Kleisli m)
 instance profunctorKleisli :: (Functor f) => Profunctor (Kleisli f)
 instance strongKleisli :: (Functor m) => Strong (Kleisli m)
