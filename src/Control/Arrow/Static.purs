@@ -7,7 +7,6 @@ import Prelude
 import Data.Profunctor
 import Data.Profunctor.Strong
 import Data.Profunctor.Choice
-import Data.Tuple (Tuple(..))
 
 import Control.Arrow
 

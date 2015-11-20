@@ -5,7 +5,6 @@ module Control.Arrow where
 import Prelude
 
 import Data.Profunctor.Strong
-import Data.Tuple (Tuple(..), swap)
 
 -- | The `Arrow` type class combines the operations of a `Category` with those of
 -- | a `Strong` profunctor.
