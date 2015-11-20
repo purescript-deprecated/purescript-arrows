@@ -6,7 +6,7 @@ import Prelude
 
 import Data.Profunctor
 import Data.Profunctor.Strong
-import Data.Tuple (Tuple(..), swap)
+import Data.Tuple (Tuple(..))
 
 import Control.Arrow
 import Control.Plus
