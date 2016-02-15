@@ -1,15 +1,15 @@
 -- | The `Cokleisli` arrow for a `Comonad`.
 module Control.Arrow.Cokleisli where
 
-import Prelude
+import Prelude (class Functor, class Category, class Semigroupoid, (<$>), (<<<))
 
-import Data.Tuple
-import Data.Profunctor
-import Data.Profunctor.Strong
+import Data.Tuple (Tuple(Tuple), snd, fst)
+import Data.Profunctor (class Profunctor)
+import Data.Profunctor.Strong (class Strong)
 
-import Control.Arrow
-import Control.Extend
-import Control.Comonad
+import Control.Arrow (class Arrow)
+import Control.Extend (class Extend, (=<=))
+import Control.Comonad (class Comonad, extract)
 
 -- | `Cokleisli` gives an `Arrow` instance for the Co-Kleisli category of a `Comonad`.
 -- |
@@ -30,7 +30,7 @@ instance profunctorCokleisli :: (Functor f) => Profunctor (Cokleisli f) where
   dimap f g (Cokleisli h) = Cokleisli (g <<< h <<< (f <$>))
 
 instance strongCokleisli :: (Comonad m) => Strong (Cokleisli m) where
-  first (Cokleisli f) = Cokleisli \w -> Tuple (f (fst <$> w)) (snd (extract w)) 
+  first (Cokleisli f) = Cokleisli \w -> Tuple (f (fst <$> w)) (snd (extract w))
   second (Cokleisli f) = Cokleisli \w -> Tuple (fst (extract w)) (f (snd <$> w))
 
 instance arrowCokleisli :: (Comonad m) => Arrow (Cokleisli m)

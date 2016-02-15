@@ -2,16 +2,16 @@
 
 module Control.Arrow.Kleisli where
 
-import Prelude
+import Prelude (class Monad, class Functor, class Category, class Semigroupoid, class Bind, (<$>), (<<<), return, (>>=))
 
-import Data.Profunctor
-import Data.Profunctor.Strong
+import Data.Profunctor (class Profunctor)
+import Data.Profunctor.Strong (class Strong)
 import Data.Tuple (Tuple(..))
 
-import Control.Arrow
-import Control.Plus
-import Control.Alt
-import Control.MonadPlus
+import Control.Arrow (class ArrowPlus, class ArrowZero, class Arrow)
+import Control.Plus (empty)
+import Control.Alt ((<|>))
+import Control.MonadPlus (class MonadPlus)
 
 -- | `Kleisli` gives an `Arrow` instance for the Kleisli category of a `Monad`.
 -- |

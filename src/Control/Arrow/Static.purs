@@ -2,13 +2,13 @@
 
 module Control.Arrow.Static where
 
-import Prelude
+import Prelude (class Applicative, class Functor, class Category, class Semigroupoid, (<$>), id, pure, (<*>), compose)
 
-import Data.Profunctor
-import Data.Profunctor.Strong
-import Data.Profunctor.Choice
+import Data.Profunctor (class Profunctor, dimap)
+import Data.Profunctor.Strong (class Strong, second, first)
+import Data.Profunctor.Choice (class Choice, right, left)
 
-import Control.Arrow
+import Control.Arrow (class Arrow)
 
 -- | `Static` gives an `Arrow` instance for the static arrows of an `Applicative` functor.
 newtype Static f a b c = Static (f (a b c))
