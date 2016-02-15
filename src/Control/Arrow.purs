@@ -2,9 +2,9 @@
 
 module Control.Arrow where
 
-import Prelude
+import Prelude (class Category)
 
-import Data.Profunctor.Strong
+import Data.Profunctor.Strong (class Strong)
 
 -- | The `Arrow` type class combines the operations of a `Category` with those of
 -- | a `Strong` profunctor.
@@ -16,12 +16,9 @@ instance arrowFunction :: Arrow (->)
 class (Arrow a) <= ArrowZero a where
   azero :: forall b c. a b c
 
-infixr 5 <+>
-
 -- | Arrows with a monoidal operation on morphisms
 class (ArrowZero a) <= ArrowPlus a where
   aplus :: forall b c. a b c -> a b c -> a b c
 
--- | An infix alias for `aplus`. 
-(<+>) :: forall a b c. (ArrowPlus a) => a b c -> a b c -> a b c
-(<+>) = aplus
+-- | An infix alias for `aplus`.
+infixr 5 aplus as <+>
