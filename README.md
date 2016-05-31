@@ -1,20 +1,5 @@
-# purescript-arrows
+# DEPRECATED
 
-[![Latest release](http://img.shields.io/bower/v/purescript-arrows.svg)](https://github.com/purescript/purescript-arrows/releases)
-[![Build Status](https://travis-ci.org/purescript/purescript-arrows.svg?branch=master)](https://travis-ci.org/purescript/purescript-arrows)
-[![Dependency Status](https://www.versioneye.com/user/projects/55848c1d36386100150003d8/badge.svg?style=flat)](https://www.versioneye.com/user/projects/55848c1d36386100150003d8)
+This library was made redundant with the introduction of [`purescript-profunctor`](https://github.com/purescript/purescript-profunctor), as an `Arrow` is just a [`Strong`](https://pursuit.purescript.org/packages/purescript-profunctor/1.0.0/docs/Data.Profunctor.Strong) [`Category`](https://pursuit.purescript.org/packages/purescript-prelude/1.0.0/docs/Control.Category).
 
-Typeclasses for arrows.
-
-## Installation
-
-```
-bower install purescript-arrows
-```
-
-## Module documentation
-
-- [Control.Arrow](docs/Control/Arrow.md)
-- [Control.Arrow.Kleisli](docs/Control/Arrow/Kleisli.md)
-- [Control.Arrow.Cokleisli](docs/Control/Arrow/Cokleisli.md)
-- [Control.Arrow.Static](docs/Control/Arrow/Static.md)
+The most recent [v0.6.2 release](https://github.com/purescript/purescript-arrows/releases/tag/v0.6.2) will continue to work for older libraries that still depend on it, although is incompatible with PureScript 0.9 and newer.
